@@ -1,6 +1,8 @@
-# Interactive-Programming-in-Python
+# Learning Python
 
-## Mini-project 1 - Rock-paper-scissors-lizard-Spock
+##  interactive programming in python
+
+### Mini-project 1 - Rock-paper-scissors-lizard-Spock
 import random
 def name_to_number(name):
     if name == "rock":
@@ -53,6 +55,24 @@ rpsls("Spock")
 rpsls("paper")
 rpsls("lizard")
 rpsls("scissors")
+
+## python in my computer
+
+### sending email
+
+from email.MIMEText import MIMEText
+from email.Header import Header
+msg = MIMEText('hello, send by Python...','plain','utf-8')
+from_addr = raw_input('From: ')
+password = raw_input('Password: ')
+smtp_server = raw_input('SMTP server: ')
+to_addr = raw_input('To: ')
+import smtplib
+server = smtplib.SMTP(smtp_server, 25) 
+server.set_debuglevel(1)
+server.login(from_addr, password)
+server.sendmail(from_addr, [to_addr], msg.as_string())
+server.quit()
 
 
 
