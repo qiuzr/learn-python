@@ -1,4 +1,5 @@
 # Interactive-Programming-in-Python
+
 ## Mini-project 1 - Rock-paper-scissors-lizard-Spock
 import random
 def name_to_number(name):
@@ -52,8 +53,6 @@ rpsls("Spock")
 rpsls("paper")
 rpsls("lizard")
 rpsls("scissors")
-               
-    
 
 
 
