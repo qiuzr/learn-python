@@ -1,6 +1,7 @@
 # 猜数字游戏
 import simplegui
 import random
+range = 100
 my_guess = 0
 step = 0
 number = 0
@@ -9,17 +10,22 @@ number = 0
 def range100():
     global step
     global number
+    global range
+    range = 100
     step = 7
     print "New game , range is from 0 to 100 "
     print "Number of remaining guesses is " , step 
     
-#在0到100之间取一个随机数   
+#在0到100之间取一个随机数 
+
     number = random.randrange(0,100)
 
 
 def range1000():
     global step
     global number
+    global range 
+    range = 1000
     step = 10
     print "New game , range is from 0 to 1000 "
     print "Number of remaining guesses is " , step
@@ -30,7 +36,11 @@ def range1000():
     
 
 def new_game():
-    range100()
+    if range == 100 :
+        range100()
+    else :
+        range1000()
+
     
     
 def input_guess(guess):
@@ -38,6 +48,7 @@ def input_guess(guess):
     global my_guess
     global number
     global step
+    global range
     
     my_guess = int (guess) 
     
@@ -47,12 +58,20 @@ def input_guess(guess):
         step = step - 1
         print "Number of remaining guesses is " , step
         print " "
+        if step == 0:
+            print "Gameover!"
+            print "The number is " , number
 
+            new_game() 
     elif my_guess > number:
         print "Lower!"
         step = step - 1
         print "Number of remaining guesses is " , step
         print " "
+        if step == 0:
+            print "Gameover!"
+            print "The number is " , number
+            new_game()
     else :
         print "Correct! "
         print " "
